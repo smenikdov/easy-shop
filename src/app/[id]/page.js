@@ -1,6 +1,7 @@
 import ProductRating from "@/components/ProductRating.js";
 import AddToBasketButton from "@/components/AddToBasketButton.js";
 import { getProductById } from "@/services/api.js";
+import '@/styles/card.scss';
 
 export default async function Page({ params }) {
     const product = await getProductById(+params.id);
@@ -8,13 +9,13 @@ export default async function Page({ params }) {
     return (
         <div className="container mx-auto">
             <div
-                className="flex mx-auto bg-gray-800 shadow-md rounded-lg overflow-hidden"
+                className="card relative flex mx-auto bg-gray-800 shadow-md rounded-lg"
                 style={{
                     width: '50vw',
                 }}
             >
                 <img
-                    className="w-full object-cover"
+                    className="w-full object-cover rounded-lg"
                     style={{
                         height: '61vh',
                         width: '25vw',
