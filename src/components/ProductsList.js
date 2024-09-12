@@ -1,6 +1,7 @@
 import ProductRating from "@/components/ProductRating.js";
 import ProductCountChip from "@/components/ProductCountChip.js";
 import Link from 'next/link'
+import Image from 'next/image'
 import '@/styles/card.scss';
 
 const ProductsList = ({ products }) => {
@@ -16,7 +17,7 @@ const ProductsList = ({ products }) => {
                 >
                     <ProductCountChip product={product} />
 
-                    <img src={product.image} alt={product.title} className="rounded-lg w-full h-80 object-cover" />
+                    <Image height={500} width={300} src={product.image} alt={product.title} className="rounded-lg w-full object-cover object-scale-down h-96 bg-white" />
                     <div className="p-4">
                         <h3 className="text-base font-semibold text-gray-300 line-clamp-2">
                             {product.title}

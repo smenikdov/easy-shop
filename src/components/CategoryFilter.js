@@ -21,13 +21,13 @@ const CategoryFilter = (props) => {
 
     return (
         <div className="bg-gray-800 text-white rounded-md mx-4">
-            <div className="container mx-auto p-6">
-                <ul className="flex items-stretch">
+            <div className="container mx-auto p-2 lg:p-6">
+                <ul className="lg:flex items-stretch">
                     {items.map((item, index) => (
                         <li
                             key={index}
                             onClick={() => handleClick(item)}
-                            className={`cursor-pointer p-4 mx-2 rounded-lg shadow-md transition-colors ${ item === category ? 'bg-blue-500 text-white' : 'bg-gray-700' }`}
+                            className={`text-nowrap cursor-pointer p-4 m-2 rounded-lg shadow-md transition-colors ${ item === category ? 'bg-blue-500 text-white' : 'bg-gray-700' }`}
                             style={{
                                 flex: '1',
                             }}
