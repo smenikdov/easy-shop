@@ -20,7 +20,7 @@ const CategoryFilter = (props) => {
     };
 
     return (
-        <div className="bg-gray-800 text-white">
+        <div className="bg-gray-800 text-white rounded-md mx-4">
             <div className="container mx-auto p-6">
                 <ul className="flex items-stretch">
                     {items.map((item, index) => (

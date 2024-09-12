@@ -1,0 +1,103 @@
+header {
+  button {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+    text-transform: none;
+    line-height: normal;
+    overflow: visible;
+    position: relative;
+    display: grid;
+    place-content: center;
+    grid-template-areas: 'stack';
+    padding: 0 80px;
+    text-transform: uppercase;
+    font-weight: 300;
+    display: flex;
+    items: center;
+    justify: center;
+  }
+
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 99;
+  }
+
+  .circle {
+    g {
+      transform-origin: center;
+      animation: rotate var(--_ani-speed) linear infinite;
+    }
+  }
+
+  nav {
+    --_clr-txt: rgb(255, 255, 255);
+    --_clr-txt-svg: rgb(147, 158, 184);
+    --_ani-speed: 6s;
+
+    display: flex;
+    font-size: 1.4rem;
+  }
+
+  .text, .icon {
+    transition: all 300ms ease-in-out;
+    grid-area: stack;
+    transition-delay: 0ms;
+  }
+
+  button > .icon {
+    transform: scale(0);
+  }
+
+  .anim-active > .text {
+    opacity: 0;
+  }
+
+  .anim-active > .icon {
+    transform: scale(1);
+  }
+
+  button > .circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    opacity: 0;
+    text-transform: uppercase;
+    transition: all 300ms ease-in-out;
+    color: var(--_clr-txt-svg);
+    z-index: 100;
+  }
+
+  .anim-active .circle {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

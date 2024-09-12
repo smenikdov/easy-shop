@@ -20,7 +20,7 @@ const BasketProducts = () => {
                 products.length === 0
                     ?
                     <div>
-                        Nothing in your cart
+                        Nothing in your basket
                     </div>
                     :
                     <ProductsList products={products} />

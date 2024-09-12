@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer.js";
+import Header from "@/components/Header.js";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -25,7 +26,9 @@ export default function RootLayout({ children }) {
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <div className="flex flex-col items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-                    <Footer />
+                    <header>
+                        <Header />
+                    </header>
                     <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
                         {children}
                     </main>

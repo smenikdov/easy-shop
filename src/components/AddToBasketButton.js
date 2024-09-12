@@ -17,7 +17,7 @@ const AddToBasketButton = (props) => {
     useEffect(() => {
         const basket = getBasket();
         const item = basket.find(item => +item.id === +product.id);
-        setCount(item ? item.count : 0);
+        setCount((item ? +item.count : 0) || 0);
     }, [ product ]);
 
 
