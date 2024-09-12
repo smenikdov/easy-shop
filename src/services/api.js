@@ -6,19 +6,13 @@ const LIMIT = 12;
 export const getProducts = async ({ page = 1, category = null } = {}) => {
     try {
         const response = await axios.get(`${BASE_URL}${ category ? `/category/${category}` : ''}`, {
-            params: {
-                page: page,
-                limit: LIMIT,
-            },
+            params: {},
         });
 
-        console.log(123, response.data);
-
+        const data = response.data || [];
         return {
-            products: response.data || [],
-            totalItems: parseInt(response.headers['x-total-count'], 10) || 0,
-            totalPages: Math.ceil((parseInt(response.headers['x-total-count'], 10) || 0) / LIMIT),
-            currentPage: page,
+            products: data.slice(LIMIT * (page - 1), LIMIT * page),
+            totalPages: Math.ceil(data.length / LIMIT),
         };
     } catch (error) {
         console.error('Ошибка при получении товаров:', error);

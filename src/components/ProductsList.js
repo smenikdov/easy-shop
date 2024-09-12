@@ -1,4 +1,3 @@
-import React from 'react';
 import ProductRating from "@/components/ProductRating.js";
 import Link from 'next/link'
 

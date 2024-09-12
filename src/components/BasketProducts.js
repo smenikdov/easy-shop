@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ProductsList from "@/components/ProductsList.js";
 
 const BasketProducts = () => {
@@ -16,7 +16,15 @@ const BasketProducts = () => {
 
     return (
         <div className="container mx-auto">
-            <ProductsList products={products} />
+            {
+                products.length === 0
+                    ?
+                    <div>
+                        Nothing in your cart
+                    </div>
+                    :
+                    <ProductsList products={products} />
+            }
         </div>
     )
 };

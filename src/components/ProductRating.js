@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 // https://react-icons.github.io/react-icons/icons/fa/
 

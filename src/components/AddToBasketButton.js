@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Button from "@/components/Button.js";
 
@@ -39,7 +39,7 @@ const AddToBasketButton = (props) => {
         const item = basket.find(item => +item.id === +product.id);
         item.count = newCount;
         if (item.count === 0) {
-            basket = basket.filter(item => +item.id === +id);
+            basket = basket.filter(item => +item.id !== +product.id);
         }
         localStorage.setItem('basket', JSON.stringify(basket));
     };

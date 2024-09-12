@@ -1,6 +1,6 @@
 'use client';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 const CategoryFilter = (props) => {
     const {
@@ -15,6 +15,7 @@ const CategoryFilter = (props) => {
     const handleClick = (name) => {
         const params = new URLSearchParams(searchParams);
         params.set('category', name);
+        params.set('page', 1);
         router.replace(`${pathname}?${params}`);
     };
 
